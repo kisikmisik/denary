@@ -1,0 +1,10 @@
+#! /usr/bin/env sh
+export
+
+if [ "$NODE_ENV" = "test" ]
+then
+  npm run migrate-linux
+  npm run test
+else
+  npm run build:live
+fi

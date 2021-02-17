@@ -1,0 +1,46 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Echo api overview",
+        "version": "v2"
+    },
+    "paths": {
+        "/api/auth/login": {
+            "post": {
+                "operationId": "login",
+                "summary": "Generate authorization token for user",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "description": "User login form",
+                    "name": "Login Form",
+                    "properties": {
+                            "login": {
+                                "type": "string"
+                            },
+                            "password": {
+                                "type": "string"
+                            }
+                        }
+
+                }],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": {
+                                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NDg4NTI3OTcsImRhdGEiOnsiaWQiOjEsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIn0sImlhdCI6MTU0ODI0Nzk5N30.xU8RsUy2e9jWc_Glm7jQijsy-vaHwL_JZI9k66k7Ri0",
+                                "duration": 604800
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "consumes": [
+        "application/json"
+    ]
+}
